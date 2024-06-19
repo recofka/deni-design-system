@@ -1,6 +1,6 @@
 {
   "name": "deni-design-system",
-  "private": true,
+  "private": false,
   "version": "0.1.0",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
@@ -49,5 +49,6 @@
     "storybook": "^8.1.10",
     "typescript": "^5.2.2",
     "vite": "^5.2.0"
-  }
+  },
+  "license": "MIT"
 }
