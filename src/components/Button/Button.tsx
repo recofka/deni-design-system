@@ -1,4 +1,3 @@
-import './button.css';
 import { styled, variants } from '../styles/index';
 
 const ButtonStyle = styled('button', {
