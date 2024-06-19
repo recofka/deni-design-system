@@ -1,20 +1,39 @@
 import './button.css';
+import { styled, variants } from '../styles/index';
+
+const ButtonStyle = styled('button', {
+  fontFamily: variants.font.default.fontFamily,
+  fontWeight: variants.fontWeight.regular.fontWeight,
+  border: 0,
+  borderRadius: '0.75rem',
+  letterSpacing: '0.9px',
+  cursor: 'pointer',
+  display: 'inline-block',
+  lineHeight: 1,
+
+  variants: {
+    size: variants.button.size,
+    variant: variants.button.variant,
+  },
+
+  defaultVariants: {
+    size: 'medium',
+    variant: 'primary',
+  },
+
+});
 
 interface ButtonProps {
   /**
-   * Is this the principal call to action on the page?
+   * Prop values to denote styles for the button
    */
-  primary?: boolean;
-  /**
-   * What background color to use
-   */
-  backgroundColor?: string;
+  variant: 'primary' | 'secondary';
   /**
    * How large should the button be?
    */
   size?: 'small' | 'medium' | 'large';
   /**
-   * Button contents
+   * Button text content
    */
   label: string;
   /**
@@ -27,21 +46,20 @@ interface ButtonProps {
  * Primary UI component for user interaction
  */
 export const Button = ({
-  primary = false,
+  variant,
   size = 'medium',
-  backgroundColor,
   label,
   ...props
 }: ButtonProps) => {
-  const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
+
   return (
-    <button
+    <ButtonStyle
       type="button"
-      className={['storybook-button', `storybook-button--${size}`, mode].join(' ')}
-      style={{ backgroundColor }}
+      size={size}
+      variant={variant}
       {...props}
     >
       {label}
-    </button>
+    </ButtonStyle>
   );
 };
