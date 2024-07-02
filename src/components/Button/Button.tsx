@@ -1,26 +1,5 @@
-import { styled, variants } from '../styles/index';
-
-const ButtonStyle = styled('button', {
-  fontFamily: variants.font.default.fontFamily,
-  fontWeight: variants.fontWeight.regular.fontWeight,
-  border: 0,
-  borderRadius: '0.75rem',
-  letterSpacing: '0.9px',
-  cursor: 'pointer',
-  display: 'inline-block',
-  lineHeight: 1,
-
-  variants: {
-    size: variants.button.size,
-    variant: variants.button.variant,
-  },
-
-  defaultVariants: {
-    size: 'medium',
-    variant: 'primary',
-  },
-
-});
+import { useState } from 'react';
+import { ButtonStyle } from './Style';
 
 interface ButtonProps {
   /**
@@ -48,14 +27,26 @@ export const Button = ({
   variant,
   size = 'medium',
   label,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  onClick,
   ...props
 }: ButtonProps) => {
+  const [animate, setAnimate] = useState(false);
+
+  const handleClick = () => {
+    setAnimate(true);
+    setTimeout(() => {
+      setAnimate(false);
+    }, 750);
+  };
 
   return (
     <ButtonStyle
       type="button"
       size={size}
       variant={variant}
+      className={`bubbly-button ${animate ? 'animate' : ''}`}
+      onClick={handleClick}
       {...props}
     >
       {label}

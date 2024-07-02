@@ -7,6 +7,7 @@ import {
     space,
 } from '../Tokens/index'
 import { createStitches, defaultThemeMap } from '@stitches/react'
+import { darken } from 'polished';
 
 export const {
     styled,
@@ -114,11 +115,19 @@ export const variants = {
         variant: {
             primary: {
                 color: 'white',
-                backgroundColor: '$plum900',
+                backgroundColor: '$plum700',
+                '&:hover': {
+                    backgroundColor: darken(0.1, '#482f54'), // $plum900:
+                },
+                $$bubbleColor: '$plum700',
             },
             secondary: {
                 color: 'white',
                 backgroundColor: '$amaranth900',
+                '&:hover': {
+                    backgroundColor: darken(0.1, '#ca5c80'),  // $amaranth900:
+                },
+                $$bubbleColor: '$amaranth700',
             },
         },
     },
