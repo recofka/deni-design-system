@@ -1,7 +1,6 @@
 import { styled, variants } from '../styles/index';
 import { keyframes } from '@stitches/react';
 
-
 const bubbleColor = variants.color.pink700.color;
 const topBubbles = keyframes({
     '0%': {

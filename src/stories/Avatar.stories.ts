@@ -15,9 +15,7 @@ const meta = {
             },
         },
         size: {
-            control: {
-                type: 'number',
-            },
+            control: 'select', options: ['small', 'medium', 'large',],
         },
         border: {
             control: {
@@ -34,27 +32,27 @@ type Story = StoryObj<typeof meta>;
 export const Small: Story = {
     args: {
         src: 'https://github.com/recofka.png',
-        size: 50,
+        size: 'small',
     }
 };
 
 export const Medium: Story = {
     args: {
         src: 'https://github.com/recofka.png',
-        size: 100,
+        size: 'medium',
     }
 };
 
 export const Large: Story = {
     args: {
         src: 'https://github.com/recofka.png',
-        size: 150,
+        size: 'large',
     }
 };
 
 export const WithFallback: Story = {
     args: {
         src: 'https://via.placeholder.com/150',
-        size: 150,
+        size: 'small',
     },
 }

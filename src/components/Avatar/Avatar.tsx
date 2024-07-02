@@ -1,4 +1,4 @@
-import './Avatar.css';
+import { AvatarContainer, AvatarStyle } from './Avatar';
 
 interface AvatarProps {
     /**
@@ -12,7 +12,7 @@ interface AvatarProps {
     /**
      * Avatar size
      */
-    size?: number;
+    size?: 'small' | 'medium' | 'large';
     /**
    * Avatar Border
    */
@@ -22,13 +22,21 @@ interface AvatarProps {
 /**
  * Avatar component for displaying profile image
  */
-export const Avatar = ({ src, alt = 'Avatar', size = 50, border = false }: AvatarProps) => {
+export const Avatar = ({
+    src,
+    alt = 'Avatar',
+    size = 'small',
+    border = true,
+}: AvatarProps) => {
     return (
-        <img
-            src={src}
-            alt={alt}
-            className={`avatar ${border ? 'avatar--border' : ''}`}
-            style={{ width: size, height: size, borderRadius: '50%' }}
-        />
+        < AvatarContainer >
+            <AvatarStyle
+                src={src}
+                alt={alt}
+                size={size}
+                border={border}
+                className={`avatar`}
+            />
+        </AvatarContainer >
     );
 };

@@ -131,4 +131,23 @@ export const variants = {
             },
         },
     },
+    avatar: {
+        size: {
+            small: {
+                border: `1px solid transparent`,
+                width: '50px',
+                height: '50px',
+            },
+            medium: {
+                border: `1px solid transparent`,
+                width: '80px',
+                height: '80px',
+            },
+            large: {
+                border: `1px solid transparent`,
+                width: '120px',
+                height: '120px',
+            },
+        },
+    }
 };
