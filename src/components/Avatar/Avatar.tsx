@@ -26,15 +26,14 @@ export const Avatar = ({
     src,
     alt = 'Avatar',
     size = 'small',
-    border = true,
+    border = false,
 }: AvatarProps) => {
     return (
-        < AvatarContainer >
+        <AvatarContainer border={border}>
             <AvatarStyle
                 src={src}
                 alt={alt}
                 size={size}
-                border={border}
                 className={`avatar`}
             />
         </AvatarContainer >
