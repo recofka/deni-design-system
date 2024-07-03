@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ButtonStyle } from './Button';
+import { ButtonStyle } from './ButtonStyle';
 
 interface ButtonProps {
   /**
