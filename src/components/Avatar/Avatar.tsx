@@ -1,4 +1,4 @@
-import { AvatarContainer, AvatarStyle } from './AvatarStyle';
+import { AvatarContainer, AvatarStyle } from './Avatar';
 
 interface AvatarProps {
     /**
